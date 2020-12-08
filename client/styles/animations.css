@@ -1,0 +1,8 @@
+@keyframes socialmedia {
+    from { 
+        background-color: red;
+    }
+    to {
+        background-color: royalblue;
+    }
+}
