@@ -1,5 +1,6 @@
 import { CssBaseline } from '@material-ui/core'
 import Head from 'next/head'
+import ButtonMenu from '../components/ButtonMenu'
 import Initials from '../components/Initials'
 import ProfilePic from '../components/ProfilePic'
 import Socials from '../components/Socials'
@@ -16,6 +17,7 @@ export default function Home() {
       <Socials /> 
       <ProfilePic /> 
       <Initials /> 
+      <ButtonMenu /> 
   </>
   )
 }

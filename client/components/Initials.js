@@ -17,7 +17,10 @@ const useStyles = makeStyles((theme) => ({
   title: {
     margin: "auto",
     textAlign: "center",
-    letterSpacing: "1.4em",
+    letterSpacing: "0.8em",
+    lineHeight:'1.4em',
+    fontWeight:'800',
+    
     [theme.breakpoints.down("sm")]: {
       fontSize: "1.5em",
       letterSpacing: "0.8em",
@@ -25,7 +28,23 @@ const useStyles = makeStyles((theme) => ({
   },
   subtitle:{
       marginTop:'0.6em',
-      letterSpacing:'0.9em'
+      letterSpacing:'0.6em',
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "0.7em",
+        letterSpacing: "0.8em",
+      },
+      "&:after":{
+        content:'""',
+        border:'1px solid white',
+        borderRadius : '50%',
+        display:'block',
+        position:'relative',
+        width:'100px',
+        height:'0px',
+        left:'45%',
+        marginTop:'0.7em',
+        
+      }
   }
 }));
 
@@ -38,7 +57,7 @@ const Initials = () => {
       opacity: 0,
     },
     config: config.molasses,
-    config:{ duration:'3000'}
+    config:{ duration:3000}
   });
   // subheader 
   const subTitleTransition = useSpring({
@@ -47,7 +66,7 @@ const Initials = () => {
       opacity: 0,
     },
     config: config.molasses,
-    config:{ delay:'3000'}
+    config:{ delay:3000, duration:3000}
   })
 
   const classes = useStyles();
