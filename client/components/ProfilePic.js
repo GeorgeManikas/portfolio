@@ -1,15 +1,28 @@
 import React from "react";
 
 const imgStyle = {
-  position: "relative",
   borderRadius: "50%",
-  left: "50%",
-  transform: "translateX(-50%)",
-  marginTop: "2em"
+  marginTop: "2em",
 };
 
 const ProfilePic = () => {
-  return <img src="profile_pic.jpg" alt="George Manikas" style={imgStyle} />;
+  return (
+    <div
+      style={{
+        width: "100vw",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvF5GWZ9aM90fHqSJzEtEP-t-csW3wuPV_-g&usqp=CAU"
+        alt="George Manikas"
+        style={imgStyle}
+      />
+      
+    </div>
+  );
 };
 
 export default ProfilePic;

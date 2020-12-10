@@ -16,7 +16,6 @@ import clsx from "clsx";
 // styling
 const useStyles = makeStyles((theme) => ({
   wrapper: {
-    cursor: "pointer",
     display: "flex",
     flexDirection: "column",
     position: "absolute",
@@ -42,11 +41,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 const Socials = () => {
   const [socialsOpen, setSocialsOpen] = useState(false);
-  const [mouseEntered, setMouseEntered] = useState(false);
   const classes = useStyles();
   return (
     <>
-      <Slide in={socialsOpen} direction="right">
+      <Slide in={socialsOpen} direction="down">
         <Box
           className={`${classes.wrapper} `}
           onMouseLeave={() => setSocialsOpen(!socialsOpen)}

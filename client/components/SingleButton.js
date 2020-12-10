@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/styles";
-import clsx from "clsx";
 import Link from "next/link";
+import { useRouter } from 'next/router';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,7 +12,8 @@ const useStyles = makeStyles((theme) => ({
     border: "none",
     letterSpacing: "0.8em",
     fontSize: "2em",
-    fontWeight: 800,
+    fontWeight: 500,
+    textTransform:'capitalize',
     margin: "0.2em",
     boxShadow: theme.shadows[17],
     [theme.breakpoints.down("md")]: {
@@ -24,7 +25,8 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   btnClicked: {
-    animation: `buttonClicked 2000ms ${theme.transitions.easing.easeOut}`
+    position:'relative',
+    animation: `$buttonClicked 2000ms ${theme.transitions.easing.easeOut}`
   },
   "@keyframes hoverAnimation": {
     "0%": {
@@ -35,28 +37,43 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   "@keyframes buttonClicked": {
-    "0": {
-      color: "red"
+    "0%": {
+      transform: 'translate(0,0)',
+      borderRadius:'50%'
     },
     "100%": {
-      color: "green"
+      transform: 'translate(0,-200%)',
+      borderRadius:'0'
     }
   }
 }));
 
-const SingleButton = (props) => {
+const SingleButton = ({caption}) => {
+
+  const router = useRouter()
+
+  
+
   const [clicked, setClicked] = useState(false);
+  const [ linkChosen, setLinkChosen] = useState(false)
   const classes = useStyles();
+  const handleClick = () => {
+    setClicked(!clicked)
+    setTimeout(()=>{
+
+      router.push(`/${caption.replace(' ','')}`)
+    },2000)
+}
   return (
-    <Link href={`/${props.caption.replace(" ", "")}`}>
+    
       <Button
-        className={`${classes.root} ${clicked ? "btnClicked" : ""}`}
+        className={`${classes.root} ${clicked ? classes.btnClicked: ''} ${linkChosen ? classes.linkChosen : ''}`}
         variant="outlined"
-        onClick={() => setClicked(!clicked)}
+        onClick={ handleClick}
+        style={{ borderRadius:'50%', borderLeft:'1px solid blue'}}
       >
-        {props.caption}
+        {caption}
       </Button>
-    </Link>
   );
 };
 

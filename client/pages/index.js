@@ -3,7 +3,6 @@ import Head from 'next/head'
 import ButtonMenu from '../components/ButtonMenu'
 import Initials from '../components/Initials'
 import ProfilePic from '../components/ProfilePic'
-import Socials from '../components/Socials'
 
 export default function Home() {
   return (
@@ -14,7 +13,7 @@ export default function Home() {
         <meta name="description" content="George Manikas Personal portofolio website" />
         
       </Head>
-      <Socials /> 
+      
       <ProfilePic /> 
       <Initials /> 
       <ButtonMenu /> 
