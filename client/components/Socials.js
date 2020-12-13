@@ -8,8 +8,8 @@ import {
   LinkedIn,
   GitHub,
   ArrowForwardIosRounded,
-  ContactSupport,
-  InfoRounded
+  ArrowDownwardRounded
+  
 } from "@material-ui/icons";
 import { blue } from "@material-ui/core/colors";
 import clsx from "clsx";
@@ -20,7 +20,22 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     position: "absolute",
     top: "40%",
-    transform: "translateY(-50%)"
+    width:'50px',
+    zIndex:100
+    // transform: "translateY(-50%)",
+  },
+  wrapperSmallScreen : { 
+    display: "flex",
+    flexDirection: "column",
+    position: "absolute",
+    
+    top: "10%",
+    left:'12%',
+    width:'50px',
+    zIndex:100,
+    "& $buttons":{
+      justifyContent:'flex-start'
+    }
   },
 
   buttons: {
@@ -28,25 +43,26 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 0,
     border: "1px solid #fff",
     borderRadius: "8px",
-
+    display:'flex',
+    cursor:'pointer',
     "&:hover": {
       width: "190%",
-      transition: "width  ease-in"
+      transition: `width  2000 ${theme.transitions.easing.easeIn}`,
+      justifyContent:'flex-end'
     }
   },
   icons: {
     padding: 0,
-    border: "1px solid green"
   }
 }));
-const Socials = () => {
+const Socials = ({isMobile}) => {
   const [socialsOpen, setSocialsOpen] = useState(false);
   const classes = useStyles();
   return (
     <>
-      <Slide in={socialsOpen} direction="down">
+      <Slide in={socialsOpen} direction={`${isMobile ? 'down' : 'right' }`} className={` ${isMobile ? classes.wrapperSmallScreen : classes.wrapper }`} >
         <Box
-          className={`${classes.wrapper} `}
+          // className={`${classes.wrapper} `}
           onMouseLeave={() => setSocialsOpen(!socialsOpen)}
         >
           <Box className={classes.buttons} style={{ background: blue[600] }}>
@@ -113,16 +129,15 @@ const Socials = () => {
         </Box>
       </Slide>
       <Box
-        className={classes.wrapper}
+        className={` ${isMobile ? classes.wrapperSmallScreen : classes.wrapper }`}
         style={{
           display: `${socialsOpen ? "none" : "flex"}`,
-          cursor: "pointer"
+          cursor: "pointer",
         }}
         onMouseEnter={() => setSocialsOpen(!socialsOpen)}
       >
         <Button onClick={() => setSocialsOpen(!socialsOpen)}>
-          {" "}
-          <ArrowForwardIosRounded fontSize="large" />{" "}
+         { isMobile ? <ArrowDownwardRounded fontSize="large" /> : <ArrowForwardIosRounded fontSize="large" /> } 
         </Button>
       </Box>
     </>

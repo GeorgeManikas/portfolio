@@ -6,11 +6,12 @@ import { useRouter } from 'next/router';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "45%",
+    position:'relative',
+    width: "55%",
     height: "30%",
     padding: "3em",
     border: "none",
-    letterSpacing: "0.8em",
+    letterSpacing: "0.1em",
     fontSize: "2em",
     fontWeight: 500,
     textTransform:'capitalize',
@@ -21,34 +22,46 @@ const useStyles = makeStyles((theme) => ({
     },
 
     "&:hover": {
-      animation: `$hoverAnimation 2000ms ${theme.transitions.easing.easeIn}`
+      // background:theme.palette.primary.light,
+      boxShadow:`inset 0 0 20px ${theme.palette.primary.main}`,
+      animation: `$hoverAnimation 1000ms linear alternate infinite`
     }
   },
   btnClicked: {
     position:'relative',
-    animation: `$buttonClicked 2000ms ${theme.transitions.easing.easeOut}`
+    animation: `$buttonClicked 1000ms ${theme.transitions.easing.easeOut}`
   },
+ 
   "@keyframes hoverAnimation": {
     "0%": {
-      transform: "rotateY(0deg)"
+      transform:'skew(0)',
+      letterSpacing:'0.1em'
     },
-    "100%": {
-      transform: "rotateY(360deg)"
+    "50%": {
+      transform: "skew(5deg,5deg)",
+      letterSpacing:'0.3em'
+    },
+    "100%":{
+      transform:'skew(-5deg,-5deg)',
+      letterSpacing:'-0.2em'
     }
   },
+  // animation when button clicks 
   "@keyframes buttonClicked": {
     "0%": {
       transform: 'translate(0,0)',
-      borderRadius:'50%'
+      borderRadius:'50%',
+      opacity:1
     },
     "100%": {
       transform: 'translate(0,-200%)',
-      borderRadius:'0'
+      borderRadius:'0',
+      opacity:0
     }
   }
 }));
 
-const SingleButton = ({caption}) => {
+const SingleButton = ({caption, url }) => {
 
   const router = useRouter()
 
@@ -61,19 +74,21 @@ const SingleButton = ({caption}) => {
     setClicked(!clicked)
     setTimeout(()=>{
 
-      router.push(`/${caption.replace(' ','')}`)
-    },2000)
+    },800)
+    router.push(url)
 }
   return (
     
       <Button
-        className={`${classes.root} ${clicked ? classes.btnClicked: ''} ${linkChosen ? classes.linkChosen : ''}`}
+        className={`${classes.root} ${clicked ? classes.btnClicked: ''} `}
         variant="outlined"
         onClick={ handleClick}
-        style={{ borderRadius:'50%', borderLeft:'1px solid blue'}}
+        
+        style={{ borderRadius:'50%', borderLeft:'2px solid gradient(blue,cyan)'}}
       >
         {caption}
       </Button>
+
   );
 };
 

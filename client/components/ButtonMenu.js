@@ -6,26 +6,33 @@ import SingleButton from "./SingleButton";
 const useStyles = makeStyles((theme) => ({
   container: {
     position: "relative",
-    width: "80%",
+    
     margin: "auto",
+    marginTop:'2em',
+    display:'flex',
+    justifyContent:'center',
+    width:'80%',
+    [theme.breakpoints.down('lg')]:{
+      width:'90%'
+    },
     [theme.breakpoints.down("sm")]: {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
       flexDirection: "column",
-      width: "100%"
+      marginTop:'2em'
+      
     }
   }
 }));
 
-const ButtonMenu = () => {
-  const menu = ["bio", "about me", "portfolio", "contact "];
+const ButtonMenu = ({ menu }) => {
   const classes = useStyles();
 
   return (
     <Box className={classes.container}>
       {menu.map((menuItem) => (
-        <SingleButton key={menuItem} caption={menuItem} />
+        <SingleButton key={menuItem.id} caption={menuItem.description} url={menuItem.url} />
       ))}
     </Box>
   );

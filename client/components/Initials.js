@@ -7,29 +7,39 @@ import { config, useSpring, animated } from "react-spring";
 const useStyles = makeStyles((theme) => ({
   wrapper: {
     position: "relative",
-    padding: "0.1em",
-    display: "flex",
-    justifyContent: "center",
+    padding: "0.2em",
+    top:'0',
+    display:'flex',
+    justifyContent: "flex-start",
     alignItems: "center",
     flexDirection: "column",
     margin: "auto",
+    
+    
+    
+    [theme.breakpoints.down('md')]:{
+      marginTop:'0.4em'
+    },
     "&::after": {
       content: '""',
       opacity: "0.3",
       border: "1px solid white",
       width: "130px",
-      marginBottom: "3em"
+      
     }
   },
   title: {
     margin: "auto",
+    textShadow:'-1px 1px 30px blue',
     textAlign: "center",
-    letterSpacing: "-0.1em",
-    lineHeight: "3em",
-    fontWeight: 800,
+    letterSpacing: "0.1em",
+    lineHeight: "2em",
+    fontSize:'5em',
+    fontFamily:'Big Shoulders Stencil Display',
+    fontWeight: 900,
 
     [theme.breakpoints.down("sm")]: {
-      fontSize: "1.5em",
+      fontSize: "3em",
       letterSpacing: "0.1em"
     }
   },
@@ -38,7 +48,9 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "1em",
     letterSpacing: "0.6em",
     [theme.breakpoints.down("sm")]: {
+      fontFamily:'DM Sans',
       fontSize: "1em",
+      marginTop:'0',
       letterSpacing: "0.8em"
     }
   }

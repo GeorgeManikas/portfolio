@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "biographies",
+  "info": {
+    "name": "biography"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "biography": {
+      "type": "richtext"
+    }
+  }
+}

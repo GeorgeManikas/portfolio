@@ -1,10 +1,8 @@
-import { CssBaseline } from '@material-ui/core'
 import Head from 'next/head'
 import ButtonMenu from '../components/ButtonMenu'
-import Initials from '../components/Initials'
-import ProfilePic from '../components/ProfilePic'
 
-export default function Home() {
+
+export default function Home({menu}) {
   return (
     <>
       <Head>
@@ -14,9 +12,20 @@ export default function Home() {
         
       </Head>
       
-      <ProfilePic /> 
-      <Initials /> 
-      <ButtonMenu /> 
+       {/* <pre> {JSON.stringify(menu,null,4)} </pre> */}
+      <ButtonMenu menu={menu}/> 
   </>
   )
+}
+
+export const getServerSideProps = async () => {
+
+  const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/menus`)
+  const data = await res.json()
+
+  return {
+    props: {
+      menu : data 
+    }
+  }
 }

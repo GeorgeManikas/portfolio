@@ -13,7 +13,14 @@ export default class MyDocument extends Document {
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+            
           />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@700&family=Roboto:wght@700&display=swap" rel="stylesheet" /> 
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet" /> 
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@900&display=swap" rel="stylesheet" /> 
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet" /> 
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans+Condensed" />
         </Head>
         <body>
           <Main />

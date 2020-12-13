@@ -3,6 +3,7 @@ import red from '@material-ui/core/colors/red';
 
 // Create a theme instance.
 const theme = createMuiTheme({
+  
   palette: {
     
     primary: {
@@ -18,11 +19,45 @@ const theme = createMuiTheme({
       default: '#353535',
     },
     text:{
-        primary: '#d9d9d9',
+        primary: '#f0f5ff',
         title:'#fff'
         
     }
   },
+  overrides:{ 
+    MuiInput:{
+      root:{
+        marginBottom:'2em',
+        "$focused":{
+          "background":'#eee'
+        }
+
+      },
+      
+    },
+    MuiButton:{
+      root:{
+        background:'#353535'
+      }
+    },
+    MuiTypography:{
+      h5:{
+        fontFamily:'Open Sans Condensed'
+      }
+    },
+    
+    MuiCssBaseline: {
+      "@global":{
+        "body":{
+          textRendering: `optimizeLegibility`,
+          fontFamily:'Open Sans Condensed, DM Sans , Big Shoulders Stencil Display !important' 
+          
+        }
+      }
+
+    }
+  }
+
   
 });
 

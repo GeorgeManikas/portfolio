@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "name": "projects",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "sandbox_url": {
+      "type": "string"
+    },
+    "short_description": {
+      "type": "string"
+    },
+    "github_url": {
+      "type": "string"
+    }
+  }
+}
