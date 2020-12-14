@@ -65,67 +65,66 @@ const Socials = ({isMobile}) => {
           // className={`${classes.wrapper} `}
           onMouseLeave={() => setSocialsOpen(!socialsOpen)}
         >
-          <Box className={classes.buttons} style={{ background: blue[600] }}>
             <Link
               href="https://www.facebook.com/george.manikas.1a/"
               color="inherit"
               target="_blank"
               rel="noreferrer"
             >
+          <Box className={classes.buttons} style={{ background: blue[600] }}>
               {" "}
-              <Facebook />{" "}
-            </Link>{" "}
+              <Facebook />
           </Box>
-          <Box
-            className={classes.buttons}
-            style={{ background: "transparent" }}
-          >
-            {" "}
+            </Link>{" "}
             <Link
               href="https://github.com/GeorgeManikas"
               color="inherit"
               target="_blank"
               rel="noreferrer"
             >
+          <Box
+            className={classes.buttons}
+            style={{ background: "transparent" }}
+          >
+           
               {" "}
               <GitHub />{" "}
-            </Link>{" "}
           </Box>
-          <Box className={classes.buttons} style={{ background: blue[300] }}>
-            {" "}
+            </Link>{" "}
             <Link
               href="https://twitter.com/geor_m"
               color="inherit"
               target="_blank"
               rel="noreferrer"
             >
+          <Box className={classes.buttons} style={{ background: blue[300] }}>
               {" "}
               <Twitter />{" "}
-            </Link>{" "}
           </Box>
-          <Box className={classes.buttons} style={{ background: "darkgray" }}>
+            </Link>{" "}
             <Link
               href="mailto:georman@outlook.com.gr"
               color="inherit"
               target="_blank"
               rel="noreferrer"
             >
+          <Box className={classes.buttons} style={{ background: "darkgray" }}>
               {" "}
               <Email />{" "}
-            </Link>{" "}
           </Box>
-          <Box className={classes.buttons} style={{ background: blue[900] }}>
-            {" "}
+            </Link>{" "}
             <Link
               href="https://www.linkedin.com/in/george-manikas-004103124/"
               color="inherit"
               target="_blank"
               rel="noreferrer"
             >
+          <Box className={classes.buttons} style={{ background: blue[900] }}>
+            {" "}
               {" "}
               <LinkedIn />{" "}
-            </Link>{" "}
           </Box>
+            </Link>{" "}
         </Box>
       </Slide>
       <Box

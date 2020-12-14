@@ -49,8 +49,13 @@ const useStyles = makeStyles( theme => ({
     },
     title:{
         fontFamily:'Open Sans Condensed', 
-        letterSpacing:'0em', 
-        fontSize:'30px'
+        letterSpacing:'0.1rem', 
+        fontSize:'1.5rem',
+        [theme.breakpoints.down("sm")]:{
+            lineHeight:'1.75em',
+            letterSpacing:'0.1rem'
+            // color:'red'
+        }
     }
 }))
 
@@ -68,7 +73,7 @@ const PortFolioItem = ({project}) => {
                             <iframe src={project.sandbox_url} className={classes.sandbox} style={{padding:'0.8em' }} />
                         </Grid>
                         <Grid item xs={12} md={6} className={classes.description}>
-                            <Typography variant="body1" style={{marginBottom:'1em', fontFamily:'Open Sans Condensed', fontSize:'18px', lineHeight:'1.75em', letterSpacing:'0.1em'}}> {project.description} </Typography>
+                            <Typography variant="body1" style={{marginBottom:'1em', fontFamily:'Open Sans Condensed', fontWeight:100, fontSize:'16px', lineHeight:'2.75rem', letterSpacing:'0.1rem'}}> {project.description} </Typography>
                         </Grid>
                             <CardActionArea>
                                 <CardActions >

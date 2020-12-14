@@ -8,17 +8,20 @@ const useStyles = makeStyles((theme) => ({
   root: {
     position:'relative',
     width: "55%",
-    height: "30%",
-    padding: "3em",
+    padding: "2em",
     border: "none",
-    letterSpacing: "0.1em",
-    fontSize: "2em",
-    fontWeight: 500,
+    letterSpacing: "0.1rem",
+    fontSize: "1.25rem",
+    fontWeight: 400,
     textTransform:'capitalize',
     margin: "0.2em",
     boxShadow: theme.shadows[17],
     [theme.breakpoints.down("md")]: {
-      fontSize: "1em"
+      width:'80%',
+      margin:'0.25rem',
+      fontSize: "1em",
+      letterSpacing:'0.1rem',
+      borderRadius:'30%'
     },
 
     "&:hover": {
@@ -72,9 +75,9 @@ const SingleButton = ({caption, url }) => {
   const classes = useStyles();
   const handleClick = () => {
     setClicked(!clicked)
-    setTimeout(()=>{
+    // setTimeout(()=>{
 
-    },800)
+    // },800)
     router.push(url)
 }
   return (

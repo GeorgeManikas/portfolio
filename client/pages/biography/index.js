@@ -14,12 +14,20 @@ const useStyles = makeStyles( theme => ({
         "& pre":{
             // padding:'2em',
             padding:'0.3em',
-        
+            fontSize:'0.75em',
             borderRadius:'8px',
             border:'1px solid #000000',
             background: '#00091c',
             opacity:'0.7',
             boxShadow : theme.shadows[10]
+        },
+        "& img":{
+            width:'20%',
+            objectFit:'cover',
+            [theme.breakpoints.down('sm')]:{
+                width:'100%'
+            }
+
         }
     }
 }))

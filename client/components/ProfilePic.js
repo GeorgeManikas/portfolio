@@ -20,7 +20,8 @@ const useStyle =  makeStyles( theme => ({
       borderRadius: "50%",
       marginTop: "1em",
       transform:'scale(1)',
-      marginBottom:0
+      marginBottom:'-2.75rem',
+      transform:'scale(0.8)'
     }
 }))
 

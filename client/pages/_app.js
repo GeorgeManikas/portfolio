@@ -13,14 +13,15 @@ const useStyle = makeStyles( theme => ({
   divStyle : {
     '&::before':{
       content:"''",
-      position: 'absolute',
+      position: 'fixed',
     top: 0,
      left: 0,
     width: '100%',
     height: '100%',
     backgroundImage: 'url("https://cdn.pixabay.com/photo/2016/11/18/18/37/programming-1836330_960_720.png") ',
-    backgroundSize:'cover',
-    
+    // backgroundSize:'cover',
+    backgroundRepeat:'repeat-y',
+    backgroundPosition:'center bottom',
     filter: 'grayscale(100%) blur(2px)',
     opacity:'0.2',
     zIndex:'-100'

@@ -1,13 +1,16 @@
-import { Box, Button, FormGroup, Grid, Input, InputLabel, Modal, Typography } from '@material-ui/core'
-import React,  { useState } from 'react'
+import { Box, Button, FormGroup, Grid, Input, InputLabel, Modal, Slide,Icon, Typography } from '@material-ui/core'
+import React,  { useState, useEffect } from 'react'
 import { makeStyles } from '@material-ui/styles'
 import { useRouter } from 'next/router'
+import { ArrowBackIosRounded, ArrowForwardIosRounded, Send, Undo } from '@material-ui/icons'
 const useStyle = makeStyles( theme => ({
     container:{
         width:'80%',
         position:'relative',
         margin:'auto',
         marginTop:'7em',
+        marginBottom:'3em',
+        top:'70%',
         background:'gray',
         borderRadius:'8px',
         padding:'3em',
@@ -27,6 +30,11 @@ const useStyle = makeStyles( theme => ({
             boxShadow:`inset 0 0 20px ${theme.palette.primary.main}`,
         }
     },
+    btnBack:{
+        "&:hover":{
+            boxShadow:`inset 0 0 20px ${theme.palette.error.main}`,
+        }
+    },
     modal:{
         position:'absolute',
         top:'30%',
@@ -36,10 +44,12 @@ const useStyle = makeStyles( theme => ({
         background:theme.palette.default,
         borderRadius:'9px',
         boxShadow:theme.shadows[3],
+        [theme.breakpoints.down('sm')]:{
+            top:'10%'
+        }
         
     },
     modalBox:{
-        transform:'rotate(35deg)',
         position:'relative',
         margin:'auto',
         top:'50%',
@@ -51,18 +61,37 @@ const useStyle = makeStyles( theme => ({
     fontFamily:'Big Shoulders Stencil Display',
     fontWeight: 900,
     textTransform:'capitalize',
-    animation:` $modalAnimation 500ms linear`,
+    
     color:'red',
+    [theme.breakpoints.up('sm')]:{
+        transform:'rotate(35deg)',
+        animation:` $modalAnimation 500ms linear`,
+    },
+    [theme.breakpoints.down("sm")]:{
+        top:'10%',
+        animation: ` $modalAnimationMobile 500ms linear `,
+    }
     },
     '@keyframes modalAnimation':{
         "0%":{ transform:'scale(1.5) rotate(45deg)'},
         "100%":{ transform:'scale(1) rotate(45deg)'}
+    },
+    '@keyframes modalAnimationMobile':{
+        "0%":{ transform:'scale(1.5) rotate(0)'},
+        "100%":{ transform:'scale(1) rotate(0) '}
     }
 }))
 
 const ContactForm = () => {
     const classes=useStyle()
     const router = useRouter()
+
+    useEffect(()=>{
+        window.scroll({
+            top:400,
+            behavior:'smooth'
+        })
+    },[])
     const handleSubmit = async (e) => {
         e.preventDefault()
         const form = new FormData()
@@ -91,11 +120,12 @@ const ContactForm = () => {
     const [open,setOpen] = useState(false)
     return (
         <>
-        <Box className={classes.container}>
+        {/* <Slide direction="up" in={true} timeout={500}> */}
+        <Box className={classes.container} id="container">
         <Typography variant="h4" color="textPrimary" style={{ textAlign:'center'}}> Contact form </Typography>
         <Typography variant="h6" color="textSecondary" style={{ textAlign:'center'}}> comments, advices , anything you'd want, and I'll answer asap !  </Typography>
         <form onSubmit={handleSubmit} style={{padding:'2em', margin:'2em'}}>
-        <Grid container spacing={1} > 
+        <Grid container spacing={2} > 
         <Grid item xs={12} md={6}>
             <InputLabel htmlFor="name" className={classes.label}> Your name (optional)</InputLabel>
             <Input className={classes.input} id="name" type="text" value={name} onChange={ (e) => setName(e.target.value)}/> 
@@ -103,15 +133,22 @@ const ContactForm = () => {
             <Input className={classes.input} id="email" type="email" value={email} onChange={ (e) => setEmail(e.target.value)}/> 
         </Grid>
         <Grid item xs={12} md={6} >
-            <InputLabel htmlFor="text" className={classes.label} > your subject ? </InputLabel>
-            <Input className={classes.input} id="text" type="text" multiline rows={8}  value={text} onChange={ (e) => setText(e.target.value)}/>
+            <InputLabel  htmlFor="text" className={classes.label} > your subject ? </InputLabel>
+            <Input variant="outlined" className={classes.input} id="text" type="text" multiline rows={8}  value={text} onChange={ (e) => setText(e.target.value)}/>
         </Grid>
-        <Grid item xs={12}>
-        <Button style={{display:'block',  marginTop:'2em'}} fullWidth type='submit' className={classes.btn}> submit </Button>
+        <Grid item xs={6}>
+        <Button color="primary" variant="contained" style={{  marginTop:'2em'}} fullWidth type='submit' className={classes.btn} id="btn"
+        endIcon={<Send  />}>   submit </Button>
         </Grid>
+        <Grid item xs={6}>
+         
+        <Button  style={{  marginTop:'2em'}} fullWidth type='submit' className={classes.btnBack} id="btn"
+        startIcon={<Undo /> } onClick={() => router.back()}>   Back </Button>
+        </Grid> 
         </Grid>
         </form>
         </Box>
+        {/* </Slide> */}
         <Modal open={open} onClose={() => setOpen(false)} className={classes.modal}>
         <Box className={classes.modalBox}>
             Thank you for your feedback !!! 

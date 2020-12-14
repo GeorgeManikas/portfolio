@@ -20,7 +20,7 @@ const PortfolioList = ({ projects }) => {
 
     const classes = useStyles()
     return (
-        <Slide in={true} timeout={800}>
+        <Slide in={true} direction="right" timeout={400}>
         <Grid container spacing={2} justify="center" alignItems="stretch" className={classes.container}>
             {projects.map( project => (
             <Grid item xs={12} lg={6} key={project.id}>

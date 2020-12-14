@@ -34,9 +34,8 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     letterSpacing: "0.1em",
     lineHeight: "2em",
-    fontSize:'5em',
+    fontSize:'3.75rem',
     fontFamily:'Big Shoulders Stencil Display',
-    fontWeight: 900,
 
     [theme.breakpoints.down("sm")]: {
       fontSize: "3em",
