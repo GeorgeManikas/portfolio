@@ -8,7 +8,10 @@ import Socials from '../components/Socials';
 import Initials from '../components/Initials'
 import ProfilePic from '../components/ProfilePic'
 import { Hidden } from '@material-ui/core';
-
+import Footer from '../components/Footer';
+import Router from 'next/router';
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css';
 const useStyle = makeStyles( theme => ({
   divStyle : {
     '&::before':{
@@ -31,7 +34,13 @@ const useStyle = makeStyles( theme => ({
 }))
 
 
+
 export default function MyApp(props) {
+  // bind events for loader *nprogress (npm i nprogress)
+Router.events.on('routeChangeStart', () => NProgress.start());
+Router.events.on('routeChangeComplete', () => NProgress.done()); 
+Router.events.on('routeChangeError', () => NProgress.done());
+
   const { Component, pageProps } = props;
   const classes = useStyle()
   React.useEffect(() => {
@@ -62,6 +71,7 @@ export default function MyApp(props) {
         <div>
         <Component {...pageProps} />
         </div>
+        <Footer /> 
       </MuiThemeProvider>
     </React.Fragment>
   );

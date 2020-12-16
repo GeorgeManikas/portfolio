@@ -8,10 +8,10 @@ const useStyle = makeStyles( theme => ({
         width:'80%',
         position:'relative',
         margin:'auto',
-        marginTop:'7em',
+        marginTop:'4em',
         marginBottom:'3em',
         top:'70%',
-        background:'gray',
+        background:theme.palette.primary.dark,
         borderRadius:'8px',
         padding:'3em',
         [theme.breakpoints.down('sm')]:{
@@ -19,7 +19,7 @@ const useStyle = makeStyles( theme => ({
         }
     },
     label:{
-        
+       color:theme.palette.text.primary 
     },
     input:{
         marginBotton:'4em',

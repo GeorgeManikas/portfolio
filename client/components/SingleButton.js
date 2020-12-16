@@ -10,18 +10,21 @@ const useStyles = makeStyles((theme) => ({
     width: "55%",
     padding: "2em",
     border: "none",
+    borderRadius:'50%',
     letterSpacing: "0.1rem",
     fontSize: "1.25rem",
     fontWeight: 400,
     textTransform:'capitalize',
     margin: "0.2em",
+    
     boxShadow: theme.shadows[17],
     [theme.breakpoints.down("md")]: {
       width:'80%',
       margin:'0.25rem',
+      marginBottom:'1.4em',
       fontSize: "1em",
       letterSpacing:'0.1rem',
-      borderRadius:'30%'
+      borderRadius:'50%'
     },
 
     "&:hover": {
@@ -32,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   },
   btnClicked: {
     position:'relative',
-    animation: `$buttonClicked 1000ms ${theme.transitions.easing.easeOut}`
+    animation: `$buttonClicked 1000ms ${theme.transitions.easing.easeInOut}`
   },
  
   "@keyframes hoverAnimation": {
@@ -57,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
       opacity:1
     },
     "100%": {
-      transform: 'translate(0,-200%)',
+      transform: 'translate(0,-50%)',
       borderRadius:'0',
       opacity:0
     }
@@ -87,7 +90,6 @@ const SingleButton = ({caption, url }) => {
         variant="outlined"
         onClick={ handleClick}
         
-        style={{ borderRadius:'50%', borderLeft:'2px solid gradient(blue,cyan)'}}
       >
         {caption}
       </Button>

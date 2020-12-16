@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     cursor:'pointer',
     "&:hover": {
       width: "190%",
-      transition: `width  2000 ${theme.transitions.easing.easeIn}`,
+      transition: `width  2000 ${theme.transitions.easing.easeInOut}`,
       justifyContent:'flex-end'
     }
   },

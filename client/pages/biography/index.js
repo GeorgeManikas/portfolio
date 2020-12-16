@@ -11,6 +11,7 @@ const useStyles = makeStyles( theme => ({
         fontFamily:"Open Sans Condensed",
         letterSpacing:'0.03em',
         fontSize:'1.3em',
+        fontWeight:'100',
         "& pre":{
             // padding:'2em',
             padding:'0.3em',
