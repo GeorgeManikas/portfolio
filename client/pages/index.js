@@ -18,7 +18,7 @@ export default function Home({menu}) {
   )
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
 
   const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/menus`)
   const data = await res.json()

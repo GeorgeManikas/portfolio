@@ -26,8 +26,14 @@ const useStyle = makeStyles( theme => ({
         width:'80%'
     },
     btn:{
+       width:'100%',
         "&:hover":{
             boxShadow:`inset 0 0 20px ${theme.palette.primary.main}`,
+        },
+        [theme.breakpoints.down('sm')]:{
+            fontSize:'0.8em',
+            width:'100%',
+            padding:'0.3em 40px'
         }
     },
     btnBack:{
@@ -35,17 +41,28 @@ const useStyle = makeStyles( theme => ({
             boxShadow:`inset 0 0 20px ${theme.palette.error.main}`,
         }
     },
+    btnContainer:{
+        [theme.breakpoints.up('md')]:{
+            width:'100%',
+            justifyContent:'space-evenly'
+        }
+        // display:'inline-flex',
+        // justifyContent:'space-between'
+
+    },
     modal:{
         position:'absolute',
-        top:'30%',
-        width:'70%',
-        height:'30%',
+        top:'2%',
+        width:'80%',
+        height:'auto',
         margin:'auto',
         background:theme.palette.default,
         borderRadius:'9px',
         boxShadow:theme.shadows[3],
         [theme.breakpoints.down('sm')]:{
-            top:'10%'
+            position:'absolute',
+            top:'0%',
+            width:'110%'
         }
         
     },
@@ -69,6 +86,7 @@ const useStyle = makeStyles( theme => ({
     },
     [theme.breakpoints.down("sm")]:{
         top:'10%',
+        width:'80%',
         animation: ` $modalAnimationMobile 500ms linear `,
     }
     },
@@ -136,13 +154,13 @@ const ContactForm = () => {
             <InputLabel  htmlFor="text" className={classes.label} > your subject ? </InputLabel>
             <Input variant="outlined" className={classes.input} id="text" type="text" multiline rows={8}  value={text} onChange={ (e) => setText(e.target.value)}/>
         </Grid>
-        <Grid item xs={6}>
-        <Button color="primary" variant="contained" style={{  marginTop:'2em'}} fullWidth type='submit' className={classes.btn} id="btn"
+        <Grid item xs={6} className={classes.btnContainer}>
+        <Button  color="primary" variant="contained" style={{  marginTop:'2em'}}  type='submit' className={classes.btn} id="btn"
         endIcon={<Send  />}>   submit </Button>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={6} className={classes.btnContainer}>
          
-        <Button  style={{  marginTop:'2em'}} fullWidth type='submit' className={classes.btnBack} id="btn"
+        <Button   style={{  marginTop:'2em'}}  type='submit' className={`${classes.btnBack} ${classes.btn}`} id="btn"
         startIcon={<Undo /> } onClick={() => router.back()}>   Back </Button>
         </Grid> 
         </Grid>

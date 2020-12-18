@@ -38,7 +38,9 @@ const useStyles = makeStyles( theme => ({
         overflow:'hidden'
     },
     description:{
-        padding:'2em'
+        padding:'2em',
+        
+        lineHeight:'0.4em !important'
     },
     link:{
         color:'white',
@@ -52,9 +54,8 @@ const useStyles = makeStyles( theme => ({
         letterSpacing:'0.1rem', 
         fontSize:'1.5rem',
         [theme.breakpoints.down("sm")]:{
-            lineHeight:'1.75em',
-            letterSpacing:'0.1rem'
-            // color:'red'
+            lineHeight:'0.7em',
+            letterSpacing:'0.1rem',
         }
     }
 }))
@@ -73,7 +74,7 @@ const PortFolioItem = ({project}) => {
                             <iframe src={project.sandbox_url} className={classes.sandbox} style={{padding:'0.8em' }} />
                         </Grid>
                         <Grid item xs={12} md={6} className={classes.description}>
-                            <Typography variant="body1" style={{marginBottom:'1em', fontFamily:'Open Sans Condensed', fontWeight:100, fontSize:'16px', lineHeight:'2.75rem', letterSpacing:'0.1rem'}}> {project.description} </Typography>
+                            <Typography variant="body1" style={{marginBottom:'1em', fontFamily:'DM Sans', fontWeight:50, fontSize:'16px', lineHeight:'1.75rem', letterSpacing:'0.1rem'}}> {project.description} </Typography>
                         </Grid>
                             <CardActionArea>
                                 <CardActions >

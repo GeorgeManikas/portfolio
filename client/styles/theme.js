@@ -35,6 +35,23 @@ const theme = createMuiTheme({
       },
       
     },
+    MuiTabs:{
+      root:{
+        
+      }
+      // indicator:{
+      //   margin:0
+      // },
+      
+    },
+    MuiTab:{
+      root:{
+        textTransform:'none',
+        fontSize:'1.15rem',
+        fontFamily:'DM Sans',
+        
+      },
+    },
     MuiButton:{
       root:{
         background:'#353535'

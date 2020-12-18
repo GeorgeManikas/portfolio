@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/styles";
-import Link from "next/link";
 import { useRouter } from 'next/router';
 
 const useStyles = makeStyles((theme) => ({
@@ -31,11 +30,16 @@ const useStyles = makeStyles((theme) => ({
       // background:theme.palette.primary.light,
       boxShadow:`inset 0 0 20px ${theme.palette.primary.main}`,
       animation: `$hoverAnimation 1000ms linear alternate infinite`
-    }
+    },
+    
+    
   },
   btnClicked: {
     position:'relative',
     animation: `$buttonClicked 1000ms ${theme.transitions.easing.easeInOut}`
+  },
+  linkChosen:{
+    background:'red'
   },
  
   "@keyframes hoverAnimation": {
@@ -74,19 +78,15 @@ const SingleButton = ({caption, url }) => {
   
 
   const [clicked, setClicked] = useState(false);
-  const [ linkChosen, setLinkChosen] = useState(false)
   const classes = useStyles();
   const handleClick = () => {
     setClicked(!clicked)
-    // setTimeout(()=>{
-
-    // },800)
     router.push(url)
 }
   return (
     
       <Button
-        className={`${classes.root} ${clicked ? classes.btnClicked: ''} `}
+        className={`${classes.root} ${clicked ? classes.btnClicked: ''}   `}
         variant="outlined"
         onClick={ handleClick}
         

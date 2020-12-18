@@ -46,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "0.3em",
     marginBottom: "1em",
     letterSpacing: "0.6em",
+    textAlign:'center',
     [theme.breakpoints.down("sm")]: {
       fontFamily:'DM Sans',
       fontSize: "1em",
