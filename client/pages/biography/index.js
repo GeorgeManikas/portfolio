@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { makeStyles } from '@material-ui/styles'
 import { Zoom } from '@material-ui/core'
+import {NextSeo} from 'next-seo'
 
 const useStyles = makeStyles( theme => ({
     md:{
@@ -36,13 +37,16 @@ const index = ({ biography, bioExists }) => {
     const classes= useStyles();
     const [ open, setOpen ] = useState(false)
 
-    
+
     return (
+        <>
+        <NextSeo title="resume page" description="George Manikas resume" /> 
         <Zoom in={bioExists} timeout={600}>
         <div  className={classes.md}>
         <ReactMarkdown children={biography[0].biography} />
         </div>
         </Zoom>
+        </>
     )
 }
 

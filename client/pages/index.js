@@ -1,18 +1,18 @@
 import Head from 'next/head'
 import ButtonMenu from '../components/ButtonMenu'
-
+import {NextSeo} from 'next-seo'
 
 export default function Home({menu}) {
   return (
     <>
       <Head>
-        <title>Portfolio site</title>
+       
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="George Manikas Personal portofolio website" />
         
       </Head>
+      <NextSeo title="George Manikas Personal Page" description="George Manikas personal portfolio page" /> 
       
-       {/* <pre> {JSON.stringify(menu,null,4)} </pre> */}
       <ButtonMenu menu={menu}/> 
   </>
   )

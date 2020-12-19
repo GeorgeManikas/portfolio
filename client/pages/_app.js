@@ -12,6 +12,9 @@ import Footer from '../components/Footer';
 import Router from 'next/router';
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css';
+import { DefaultSeo } from 'next-seo'
+import SEO from '../next-seo.config'
+
 const useStyle = makeStyles( theme => ({
   divStyle : {
     '&::before':{
@@ -54,9 +57,10 @@ Router.events.on('routeChangeError', () => NProgress.done());
   return (
     <React.Fragment>
       <Head>
-        <title>My page</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+        
       </Head>
+      
       <MuiThemeProvider theme={theme}>
       
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
@@ -69,6 +73,7 @@ Router.events.on('routeChangeError', () => NProgress.done());
           <Initials /> 
         </div>
         <div>
+        <DefaultSeo {...SEO} /> 
         <Component {...pageProps} />
         </div>
         <Footer /> 

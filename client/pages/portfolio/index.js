@@ -1,9 +1,12 @@
 import React from 'react'
 import PortfolioList from '../../components/portfolio/PortfolioList'
+import { NextSeo} from 'next-seo'
 const index = ({projects}) => {
     return (
-        // <pre> {JSON.stringify(projects,null,4)}</pre>
+        <>
+        <NextSeo title="My Portfolio" description="George Manikas Portfolio" /> 
            <PortfolioList projects={projects}/> 
+        </>
     )
 }
 
