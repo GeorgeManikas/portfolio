@@ -14,7 +14,8 @@ const useStyles = makeStyles(theme => ({
         width:'100vw',
         boxShadow:theme.shadows[15],
         display:'flex',
-        justifyContent:'space-center'
+        justifyContent:'space-center',
+        background: `linear-gradient( #353535,${theme.palette.primary.dark}, ${theme.palette.primary.dark}  )`
        
 
     },
@@ -51,7 +52,6 @@ const Footer = () => {
         <>
         <AppBar position="fixed" className={classes.appbar}>
         <Toolbar className={classes.box}>
-            <IconButton onClick={() => router.back()}><ArrowBackIosOutlined className={classes.icons} /> </IconButton> 
             <IconButton onClick={() => router.push('/')}><HomeRounded   className={classes.icons} /> </IconButton> 
             <Link href="https://github.com/GeorgeManikas/portfolio" target="_blank" rel="noreferrer" className={classes.github}> <Typography variant="body2" color="textPrimary" > <span style={{ marginRight:'0.2em'}}>view code for this site</span>   <GitHub />   </Typography></Link>
             {/* <Box className={classes.box}>

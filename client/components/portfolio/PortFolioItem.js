@@ -24,9 +24,9 @@ const useStyles = makeStyles( theme => ({
         "100%":{background:theme.palette.primary.dark}
     },
     "@keyframes skewCard":{
-        "0%": { transform: 'rotate(-.2deg)'},
+        "0%": { transform: 'rotate(-.5deg)'},
         "25%": { transform: 'rotate(-0deg)'},
-        "50%": { transform: 'rotate(.2deg)'},
+        "50%": { transform: 'rotate(.5deg)'},
         "75%": { transform: 'rotate(0.1deg)'},
         "100%":{transform:'rotate(0)'}
     },
@@ -35,7 +35,8 @@ const useStyles = makeStyles( theme => ({
         height:'300px',
         border:'none',
         boxShadow:theme.shadows[6],
-        overflow:'hidden'
+        overflow:'hidden',
+        padding:'0.4em',
     },
     description:{
         padding:'2em',

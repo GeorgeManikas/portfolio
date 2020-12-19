@@ -141,7 +141,7 @@ const ContactForm = () => {
         {/* <Slide direction="up" in={true} timeout={500}> */}
         <Box className={classes.container} id="container">
         <Typography variant="h4" color="textPrimary" style={{ textAlign:'center'}}> Contact form </Typography>
-        <Typography variant="h6" color="textSecondary" style={{ textAlign:'center'}}> comments, advices , anything you'd want, and I'll answer asap !  </Typography>
+        <Typography variant="h6" color="textSecondary" style={{ textAlign:'center'}}> Please write your comments, advice, suggestions etc. and I will be happy to answer!  </Typography>
         <form onSubmit={handleSubmit} style={{padding:'2em', margin:'2em'}}>
         <Grid container spacing={2} > 
         <Grid item xs={12} md={6}>
@@ -151,7 +151,7 @@ const ContactForm = () => {
             <Input className={classes.input} id="email" type="email" value={email} onChange={ (e) => setEmail(e.target.value)}/> 
         </Grid>
         <Grid item xs={12} md={6} >
-            <InputLabel  htmlFor="text" className={classes.label} > your subject ? </InputLabel>
+            <InputLabel  htmlFor="text" className={classes.label} > Message </InputLabel>
             <Input variant="outlined" className={classes.input} id="text" type="text" multiline rows={8}  value={text} onChange={ (e) => setText(e.target.value)}/>
         </Grid>
         <Grid item xs={6} className={classes.btnContainer}>

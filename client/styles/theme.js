@@ -38,7 +38,8 @@ const theme = createMuiTheme({
     MuiTabs:{
       root:{
         
-      }
+      },
+      
       // indicator:{
       //   margin:0
       // },
@@ -49,8 +50,12 @@ const theme = createMuiTheme({
         textTransform:'none',
         fontSize:'1.15rem',
         fontFamily:'DM Sans',
-        
+          
       },
+      wrapper:{
+        alignItems:'flex-start',
+        
+      }
     },
     MuiButton:{
       root:{

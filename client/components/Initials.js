@@ -22,9 +22,9 @@ const useStyles = makeStyles((theme) => ({
     },
     "&::after": {
       content: '""',
-      opacity: "0.3",
+      opacity: "0.1",
       border: "1px solid white",
-      width: "130px",
+      width: "90%",
       
     }
   },
@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
   subtitle: {
     marginTop: "0.3em",
     marginBottom: "1em",
-    letterSpacing: "0.6em",
+    letterSpacing: "0.1em",
     textAlign:'center',
     [theme.breakpoints.down("sm")]: {
       fontFamily:'DM Sans',

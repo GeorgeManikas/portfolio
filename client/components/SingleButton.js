@@ -25,18 +25,20 @@ const useStyles = makeStyles((theme) => ({
       letterSpacing:'0.1rem',
       borderRadius:'50%'
     },
-
+   
     "&:hover": {
       // background:theme.palette.primary.light,
       boxShadow:`inset 0 0 20px ${theme.palette.primary.main}`,
-      animation: `$hoverAnimation 1000ms linear alternate infinite`
+     
+      animation: `$hoverAnimation 1000ms ease-in-out alternate infinite`,
     },
     
     
   },
   btnClicked: {
     position:'relative',
-    animation: `$buttonClicked 1000ms ${theme.transitions.easing.easeInOut}`
+    animation: `$buttonClicked 1000ms ${theme.transitions.easing.easeInOut}`,
+    
   },
   linkChosen:{
     background:'red'
@@ -86,10 +88,10 @@ const SingleButton = ({caption, url }) => {
   return (
     
       <Button
+        id={caption}
         className={`${classes.root} ${clicked ? classes.btnClicked: ''}   `}
         variant="outlined"
         onClick={ handleClick}
-        
       >
         {caption}
       </Button>

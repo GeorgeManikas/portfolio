@@ -21,6 +21,7 @@ export default class MyDocument extends Document {
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@900&display=swap" rel="stylesheet" /> 
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet" /> 
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans+Condensed" />
+<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Caveat+Brush&family=Pangolin&display=swap" rel="stylesheet"/> 
         </Head>
         <body>
           <Main />
