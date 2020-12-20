@@ -80,10 +80,10 @@ const Initials = () => {
   const classes = useStyles();
   return (
     <Box className={classes.wrapper}>
-      <Typography className={classes.title} variant="h3" color="initial">
+      <Typography className={classes.title} variant="h1" color="initial">
         <animated.div style={titleTransition}>George Manikas</animated.div>
       </Typography>
-      <Typography variant="h4" color="initial" className={classes.subtitle}>
+      <Typography variant="h2" color="initial" className={classes.subtitle}>
         <animated.div style={subTitleTransition}>
           Frontend Enthusiast{" "}
         </animated.div>
