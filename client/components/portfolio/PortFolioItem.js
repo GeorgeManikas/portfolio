@@ -101,4 +101,3 @@ const PortFolioItem = ({project}) => {
 }
 
 export default PortFolioItem
-{/* // mongodb+srv://georman:<password>@portfolio.rbiwu.mongodb.net/<dbname>?retryWrites=true&w=majority */}
