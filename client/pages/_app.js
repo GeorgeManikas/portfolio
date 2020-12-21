@@ -65,6 +65,7 @@ Router.events.on('routeChangeError', () => NProgress.done());
       
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
+        <DefaultSeo {...SEO} /> 
         <Hidden smDown>
         <Socials />
         </Hidden>
@@ -73,7 +74,7 @@ Router.events.on('routeChangeError', () => NProgress.done());
           <Initials /> 
         </div>
         <div>
-        <DefaultSeo {...SEO} /> 
+        
         <Component {...pageProps} />
         </div>
         <Footer /> 
